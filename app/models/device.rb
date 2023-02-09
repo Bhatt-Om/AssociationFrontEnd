@@ -1,3 +1,3 @@
 class Device < ApplicationRecord
-  belongs_to :devicewarrenty
+  belongs_to :device_warrenty
 end
