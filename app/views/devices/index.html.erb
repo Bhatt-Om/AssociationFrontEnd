@@ -1,2 +1,12 @@
 <h1>Devices#index</h1>
 <p>Find me in app/views/devices/index.html.erb</p>
+
+<%# <%= link_to "Show", devices_show_path %> 
+<%= link_to "New",  new_device_path %>
+
+<% @devices.each do |dw| %>
+<h3>Device: <%= dw.name %>, Duration:  <%= dw.device_warrenty.duration %>year</h3>
+<%= link_to "Show",  device_path(dw) %>
+<%= link_to "Edit",   edit_device_path(dw) %>
+<%= link_to "Delete", device_path(dw), data: { turbo_method: :delete , turbo_confirm: 'Are you sure?' } %>
+<% end %>
