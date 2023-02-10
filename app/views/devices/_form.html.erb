@@ -1,0 +1,8 @@
+<%= form_with model: @device do |f| %>
+  <%= f.label :name  %>
+  <%= f.text_field :name %>
+
+  <%= f.collection_select  :device_warrenty_id, DeviceWarrenty.all, :id, :duration %>
+
+  <%= f.submit %>
+<% end %>

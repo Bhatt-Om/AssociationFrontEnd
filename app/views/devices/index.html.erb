@@ -1,0 +1,20 @@
+<%# <%= link_to "Show", devices_show_path %> 
+<%= link_to "New",  new_device_path %>
+
+<table class="table table-dark table-striped">
+  <tr>
+    <th><h3>Device Name</th>
+    <th colspan= "3">Action</th>
+  </tr>
+
+<% @devices.each do |dw| %>
+<tr>
+  <td><h3>Device: <%= dw.name %>, Duration:  <%= dw.device_warrenty.duration %>year</h3></td>
+</tr>
+<tr>
+  <td><%= link_to "Show",  device_path(dw) %></td>
+  <td><%= link_to "Edit",   edit_device_path(dw) %></td>
+  <td><%= link_to "Delete", device_path(dw), data: { turbo_method: :delete , turbo_confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
+</table>
