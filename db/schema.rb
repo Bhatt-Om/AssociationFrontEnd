@@ -11,19 +11,4 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_02_09_114818) do
-  create_table "device_warrenties", force: :cascade do |t|
-    t.string "duration"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "devices", force: :cascade do |t|
-    t.string "name"
-    t.integer "device_warrenty_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["device_warrenty_id"], name: "index_devices_on_device_warrenty_id"
-  end
-
-  add_foreign_key "devices", "device_warrenties"
 end
